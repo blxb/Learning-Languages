@@ -30,6 +30,7 @@ askDiff = input("Which level would you prefer to use? Easy, Medium or Hard?\n ")
 selectedDiff = askDiff.lower() # using lowercase because in the list difficulities are all typed in lower cases and if it wouldnt use .lower then the script won't really find the word from that list.
 if selectedDiff not in words_by_level: # checking if what user entered in terminal is not valid
     print("Reply with a level difficulty rather than something else.\n")
+    sys.exit()
 else:
     word = rand.choice(words_by_level[selectedDiff]) # selecting a random word from the list depending on which difficulity level did user prefer to use.
 
@@ -58,6 +59,7 @@ if selectedLang in availableLanguages:
     print(f"You selected {selectedLang}. Language code is '{lang_code}'.")
 else:
     print("Please choose a valid language from the list.\n")
+    sys.exit()
 
 print(f"The word you have to try translate to {selectedLang} is: {word}")
 
